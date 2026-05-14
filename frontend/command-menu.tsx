@@ -10,7 +10,7 @@ export default function CommandMenu() {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        setIsOpen((open) => !open);
+        setIsOpen((open: boolean) => !open);
       }
       if (e.key === "Escape") {
         setIsOpen(false);
@@ -34,14 +34,14 @@ export default function CommandMenu() {
             initial={{ opacity: 0, scale: 0.95, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            className="w-full max-w-2xl bg-[#0A192F] border border-[#D4AF37]/30 rounded-xl shadow-2xl overflow-hidden"
+          className="w-full max-w-2xl overflow-hidden rounded-xl border border-cortex-gold/30 bg-cortex-navy shadow-2xl"
           >
-            <div className="flex items-center px-4 py-3 border-b border-[#D4AF37]/20">
-              <span className="text-[#D4AF37] mr-3">❯</span>
+          <div className="flex items-center border-b border-cortex-gold/20 px-4 py-3">
+            <span className="mr-3 text-cortex-gold">❯</span>
               <input
                 type="text"
                 placeholder="Ask AI or search portfolio..."
-                className="flex-1 bg-transparent border-none outline-none text-slate-200 placeholder-slate-500 font-mono"
+              className="flex-1 border-none bg-transparent font-mono text-slate-200 placeholder-slate-500 outline-none"
                 autoFocus
               />
               <div className="text-xs text-slate-500 font-mono flex gap-1">
@@ -49,7 +49,7 @@ export default function CommandMenu() {
               </div>
             </div>
             <div className="p-4 h-64 overflow-y-auto font-mono text-sm text-slate-400">
-              <p className="mb-2 text-[#D4AF37]/80">SYSTEM: AI Command Center initialized.</p>
+              <p className="mb-2 text-cortex-gold/80">SYSTEM: AI Command Center initialized.</p>
               <p>Awaiting query...</p>
               {/* Search results and AI summaries will be injected here */}
             </div>
