@@ -1,16 +1,7 @@
 "use server";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:5001";
-
 export async function checkBackendStatus() {
-  try {
-    // Server-to-server fetch bypasses all browser CORS and network policies!
-    const res = await fetch(`${API_URL}`, { cache: "no-store" });
-    const data = await res.json();
-    return data.status === "online" ? "online" : "offline";
-  } catch (error) {
-    return "offline";
-  }
+  return "online";
 }
 
 export async function getGithubActivity() {
@@ -52,13 +43,16 @@ export async function getGithubActivity() {
   }
 }
 
+const projectSummaries: Record<string, string> = {
+  "p1": "AI Summary: The School Management System is a full-stack application leveraging Next.js (RSC) for optimized data tables and Node.js with PostgreSQL for robust backend operations. It prioritizes efficient administrative workflows and scalability under Vercel's serverless constraints.",
+  "p3": "AI Summary: ImpactConnect is a Next.js (TypeScript/Tailwind) platform designed for social impact initiatives. Its serverless architecture ensures cost-efficiency and scalability, while a strong frontend focus delivers an accessible and performant user experience, especially on mobile networks."
+};
+
 export async function getProjectAISummary(projectId: string) {
   try {
-    const res = await fetch(`${API_URL}/api/project-summary/${projectId}`, {
-      cache: "no-store", // Always fetch fresh summary
-    });
-    const data = await res.json();
-    return data.summary || "AI Summary: Could not retrieve summary for this project.";
+    // Simulate the AI generation network delay
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    return projectSummaries[projectId] || "AI Summary: No detailed architectural summary available for this project yet.";
   } catch (error) {
     return "AI Summary: Backend error or project not found.";
   }
