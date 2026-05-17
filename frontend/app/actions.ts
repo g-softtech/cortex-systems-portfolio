@@ -45,7 +45,7 @@ export async function getGithubActivity() {
 
 const projectSummaries: Record<string, string> = {
   "p1": "AI Summary: The School Management System is a full-stack application leveraging Next.js (RSC) for optimized data tables and Node.js with PostgreSQL for robust backend operations. It prioritizes efficient administrative workflows and scalability under Vercel's serverless constraints.",
-  "p3": "AI Summary: ImpactConnect is a Next.js (TypeScript/Tailwind) platform designed for social impact initiatives. Its serverless architecture ensures cost-efficiency and scalability, while a strong frontend focus delivers an accessible and performant user experience, especially on mobile networks."
+  "p3": "AI Summary: ImpactConnect is a full-stack NGO management platform leveraging React (Vite) and Node.js/Express. It features secure JWT authentication, Paystack donation integration, and a MongoDB Atlas database. The architecture demonstrates clean, decoupled deployment with the frontend on Vercel and the REST API on Render."
 };
 
 export async function getProjectAISummary(projectId: string) {

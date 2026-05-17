@@ -117,7 +117,7 @@ export default function Page() {
                   <span className="text-xs font-mono text-emerald-400">🟢 Maintained</span>
                 </div>
                 <h4 className="text-2xl font-bold text-white mb-2">ImpactConnect</h4>
-                <p className="text-slate-400 text-sm">Next.js • TypeScript • Tailwind CSS</p>
+                <p className="text-slate-400 text-sm">React • Node.js • MongoDB</p>
               </div>
               <div className="mt-8 flex gap-3">
                 <a href="https://github.com/g-softtech/impactconnect" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-[#D4AF37] hover:text-white transition-colors border-b border-transparent hover:border-[#D4AF37]">View Code ↗</a>
@@ -131,14 +131,14 @@ export default function Page() {
               <div className="space-y-6">
                 <div>
                   <h5 className="text-slate-200 font-semibold mb-1 flex items-center gap-2"><span className="text-[#D4AF37]">❯</span> The Problem & Value</h5>
-                  <p className="text-slate-400 text-sm leading-relaxed">Designed a platform to bridge the gap between social impact initiatives and community participation. Focused on accessibility and intuitive user experience.</p>
+                  <p className="text-slate-400 text-sm leading-relaxed">A modern full-stack NGO management platform built for organizations to manage projects, receive donations, and publish impact stories through a scalable, production-ready experience.</p>
                 </div>
                 <div>
                   <h5 className="text-slate-200 font-semibold mb-1 flex items-center gap-2"><span className="text-[#D4AF37]">❯</span> Architecture Flow & Impact</h5>
                   <div className="mt-2 mb-3 p-3 rounded bg-slate-900 border border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400 overflow-x-auto">
-                    <span className="text-emerald-400 whitespace-nowrap">Mobile Client</span><span className="mx-2">→</span><span className="text-blue-400 whitespace-nowrap">Next.js Edge API</span><span className="mx-2">→</span><span className="text-purple-400 whitespace-nowrap">Supabase Serverless</span>
+                    <span className="text-emerald-400 whitespace-nowrap">React (Vite)</span><span className="mx-2">→</span><span className="text-blue-400 whitespace-nowrap">Express REST API</span><span className="mx-2">→</span><span className="text-purple-400 whitespace-nowrap">MongoDB Atlas</span>
                   </div>
-                  <p className="text-slate-400 text-sm leading-relaxed"><strong className="text-slate-300">Lessons Learned:</strong> Increased community participation by 60%. Balancing complex state management required strict adherence to isolated Client Components.</p>
+                  <p className="text-slate-400 text-sm leading-relaxed"><strong className="text-slate-300">Lessons Learned:</strong> Integrated secure Paystack donations and role-based JWT access. Building a decoupled architecture allowed for independent scaling of the frontend on Vercel and the backend API on Render.</p>
                 </div>
               </div>
             </div>

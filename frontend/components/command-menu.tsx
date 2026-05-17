@@ -8,7 +8,7 @@ import { getProjectAISummary } from "@/app/actions";
 const COMMANDS = [
   { id: "p1", title: "School Management System", category: "Projects", description: "Next.js • Node.js • PostgreSQL", link: "#projects" },
   { id: "p2", title: "Secure Authentication Service", category: "Projects", description: "Node.js • Redis • JWT", link: "#projects" },
-  { id: "p3", title: "ImpactConnect", category: "Projects", description: "Next.js • TypeScript • Tailwind CSS", link: "#projects" },
+  { id: "p3", title: "ImpactConnect", category: "Projects", description: "React • Node.js • MongoDB", link: "#projects" },
   { id: "b1", title: "Scaling Next.js App Router", category: "Insights", description: "Read technical article on RSC architecture", link: "/insights/scaling-nextjs-app-router" },
   { id: "b2", title: "JWT vs. Sessions", category: "Insights", description: "Read technical article on pragmatic auth", link: "/insights/jwt-vs-sessions" },
   { id: "b3", title: "React Performance Optimizations", category: "Insights", description: "Read technical article on UI speed", link: "/insights/react-performance-optimizations" },
