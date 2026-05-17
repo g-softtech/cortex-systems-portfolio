@@ -49,30 +49,33 @@ export default function Page() {
 
       {/* Manifesto Section */}
       <section aria-labelledby="manifesto-heading" className="w-full max-w-6xl px-6 md:px-8 py-16">
-        <h3 id="manifesto-heading" className="text-sm font-mono text-[#D4AF37] mb-8 tracking-widest uppercase">01. Engineering Operating System</h3>
+        <h3 id="manifesto-heading" className="text-sm font-mono text-[#D4AF37] mb-8 tracking-widest uppercase">01. How I Build</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-6 border border-slate-800 bg-[#0A192F]/50 rounded-lg backdrop-blur-sm hover:border-slate-700 transition-colors">
-            <h4 className="text-xl font-bold text-white mb-3">Constraint-Driven Design</h4>
-            <p className="text-slate-400 text-sm leading-relaxed">Building within strict boundaries (API limits, budgets, deadlines) isn't a limitation; it's a feature. I optimize for maximum business value before the first line of code is written.</p>
+            <h4 className="text-xl font-bold text-white mb-3">Solving Real Problems First</h4>
+            <p className="text-slate-400 text-sm leading-relaxed">I focus on building features that create real value for users and businesses. Whether working within tight deadlines, budgets, or technical constraints, I aim to deliver practical solutions before adding unnecessary complexity.</p>
           </div>
           <div className="p-6 border border-slate-800 bg-[#0A192F]/50 rounded-lg backdrop-blur-sm hover:border-slate-700 transition-colors">
-            <h4 className="text-xl font-bold text-white mb-3">Architectural Pragmatism</h4>
-            <p className="text-slate-400 text-sm leading-relaxed">Choosing boring technology when reliability matters, and bleeding-edge tech only when the UX requires it. Maintenance overhead is always factored into the initial build.</p>
+            <h4 className="text-xl font-bold text-white mb-3">Choosing the Right Tools</h4>
+            <p className="text-slate-400 text-sm leading-relaxed">I prefer tools and technologies that are reliable, maintainable, and fit the problem well. I enjoy exploring modern technologies, but I believe simplicity and long-term maintainability matter just as much as innovation.</p>
           </div>
           <div className="p-6 border border-slate-800 bg-[#0A192F]/50 rounded-lg backdrop-blur-sm hover:border-slate-700 transition-colors">
-            <h4 className="text-xl font-bold text-white mb-3">Velocity vs. Quality</h4>
-            <p className="text-slate-400 text-sm leading-relaxed">Balancing MVP speed with scalable foundations. I prefer building decoupled modules that can be easily refactored later, avoiding the dreaded "full rewrite".</p>
+            <h4 className="text-xl font-bold text-white mb-3">Building for Growth</h4>
+            <p className="text-slate-400 text-sm leading-relaxed">I like building applications in a modular way so features can evolve over time without needing major rewrites. My goal is to balance fast delivery with clean foundations that are easy to improve later.</p>
           </div>
           <div className="p-6 border border-slate-800 bg-[#0A192F]/50 rounded-lg backdrop-blur-sm hover:border-slate-700 transition-colors">
-            <h4 className="text-xl font-bold text-white mb-3">Production Reasoning</h4>
-            <p className="text-slate-400 text-sm leading-relaxed">Deployments are just the beginning. I employ a "Trace-Log-Isolate" approach to debugging live systems, ensuring high observability and fast time-to-resolution.</p>
+            <h4 className="text-xl font-bold text-white mb-3">Improving Through Real Usage</h4>
+            <p className="text-slate-400 text-sm leading-relaxed">I pay close attention to how applications behave after deployment — fixing issues, improving performance, refining user experience, and learning from real-world usage to make products better over time.</p>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
       <section id="projects" aria-labelledby="projects-heading" className="w-full max-w-6xl px-6 md:px-8 py-16">
-        <h3 id="projects-heading" className="text-sm font-mono text-[#D4AF37] mb-8 tracking-widest uppercase">02. Featured Architecture</h3>
+        <div className="mb-12">
+          <h3 id="projects-heading" className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-3">02. Featured Projects & Systems</h3>
+          <p className="text-slate-400">Production-grade fullstack applications I’ve built and maintained.</p>
+        </div>
         <div className="flex flex-col gap-12">
           <article className="border border-slate-800 bg-[#0A192F]/50 rounded-xl overflow-hidden backdrop-blur-sm flex flex-col md:flex-row group">
             <div className="md:w-1/3 bg-slate-900 border-r border-slate-800 p-8 flex flex-col justify-between">
@@ -81,8 +84,8 @@ export default function Page() {
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
                   <span className="text-xs font-mono text-emerald-400">🟢 Maintained</span>
                 </div>
-                <h4 className="text-2xl font-bold text-white mb-2">School Management System</h4>
-                <p className="text-slate-400 text-sm">Next.js • Node.js • PostgreSQL</p>
+                <h4 className="text-2xl font-bold text-white mb-2">Smart School Management System</h4>
+                <p className="text-slate-400 text-sm">React • Node.js • MongoDB</p>
               </div>
               <div className="mt-8 flex gap-3">
                 <a href="#" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-[#D4AF37] hover:text-white transition-colors border-b border-transparent hover:border-[#D4AF37]">View Code ↗</a>
@@ -96,14 +99,14 @@ export default function Page() {
               <div className="space-y-6">
                 <div>
                   <h5 className="text-slate-200 font-semibold mb-1 flex items-center gap-2"><span className="text-[#D4AF37]">❯</span> The Problem & Value</h5>
-                  <p className="text-slate-400 text-sm leading-relaxed">Administrative bottlenecks were costing educators hours per week. Built a centralized dashboard to automate enrollment and grading workflows.</p>
+                  <p className="text-slate-400 text-sm leading-relaxed">A full-stack MERN platform designed for modern African educational institutions. It delivers a premium, mobile-first experience bridging administration, educators, students, and parents into a single cohesive ecosystem.</p>
                 </div>
                 <div>
                   <h5 className="text-slate-200 font-semibold mb-1 flex items-center gap-2"><span className="text-[#D4AF37]">❯</span> Architecture Flow & Impact</h5>
                   <div className="mt-2 mb-3 p-3 rounded bg-slate-900 border border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400 overflow-x-auto">
-                    <span className="text-emerald-400 whitespace-nowrap">Client (React)</span><span className="mx-2">→</span><span className="text-blue-400 whitespace-nowrap">Next.js RSC/Actions</span><span className="mx-2">→</span><span className="text-purple-400 whitespace-nowrap">PostgreSQL</span>
+                    <span className="text-emerald-400 whitespace-nowrap">React (Vite)</span><span className="mx-2">→</span><span className="text-blue-400 whitespace-nowrap">Express REST API</span><span className="mx-2">→</span><span className="text-purple-400 whitespace-nowrap">MongoDB</span>
                   </div>
-                  <p className="text-slate-400 text-sm leading-relaxed"><strong className="text-slate-300">Lessons Learned:</strong> Reduced admin processing time by 40%. Initial bottleneck was DB connection pooling during burst traffic, resolved via PgBouncer.</p>
+                  <p className="text-slate-400 text-sm leading-relaxed"><strong className="text-slate-300">Lessons Learned:</strong> Architected a scalable multi-role authentication system using JWT and Context API. Implementing dynamic role-based route protection allowed for secure, isolated dashboards for Admins, Teachers, Students, and Parents while maintaining a shared reusable component architecture. Integrated an AI-assistant for educational tools and Recharts for administrative analytics.</p>
                 </div>
               </div>
             </div>
@@ -146,9 +149,9 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Telemetry & Performance Section */}
-      <section aria-labelledby="telemetry-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-800/50">
-        <h3 id="telemetry-heading" className="text-sm font-mono text-[#D4AF37] mb-8 tracking-widest uppercase">03. Performance & Telemetry</h3>
+      {/* Performance & Reliability Section */}
+      <section aria-labelledby="reliability-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-800/50">
+        <h3 id="reliability-heading" className="text-sm font-mono text-[#D4AF37] mb-8 tracking-widest uppercase">03. Performance & Reliability</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-6 border border-slate-800 bg-[#0A192F]/50 rounded-xl backdrop-blur-sm hover:border-slate-700 transition-colors group">
             <h4 className="text-slate-200 font-bold mb-4 flex items-center justify-between">Lighthouse Baseline <span className="text-xs font-mono text-slate-500 group-hover:text-[#D4AF37] transition-colors">LIVE</span></h4>
@@ -157,27 +160,28 @@ export default function Page() {
               <div className="flex flex-col items-center"><div className="w-12 h-12 rounded-full border-4 border-emerald-500 flex items-center justify-center text-sm font-bold text-emerald-400">100</div><span className="text-[10px] text-slate-500 uppercase tracking-widest mt-2">A11y</span></div>
               <div className="flex flex-col items-center"><div className="w-12 h-12 rounded-full border-4 border-emerald-500 flex items-center justify-center text-sm font-bold text-emerald-400">100</div><span className="text-[10px] text-slate-500 uppercase tracking-widest mt-2">SEO</span></div>
             </div>
+            <p className="text-xs text-slate-500 font-mono mt-6">Built with strong focus on performance, accessibility, and modern web standards.</p>
           </div>
           <div className="p-6 border border-slate-800 bg-[#0A192F]/50 rounded-xl backdrop-blur-sm hover:border-slate-700 transition-colors">
-            <h4 className="text-slate-200 font-bold mb-4">Production Uptime</h4>
+            <h4 className="text-slate-200 font-bold mb-4">Reliability</h4>
             <div className="text-4xl font-light text-slate-200 mb-2">99.98<span className="text-xl text-[#D4AF37]">%</span></div>
-            <p className="text-xs text-slate-500 font-mono">Trailing 90 days. Deployed on managed serverless infrastructure with automated health checks.</p>
+            <p className="text-xs text-slate-500 font-mono">Consistently monitored deployments with reliable uptime and smooth user experience across devices.</p>
           </div>
           <div className="p-6 border border-slate-800 bg-[#0A192F]/50 rounded-xl backdrop-blur-sm hover:border-slate-700 transition-colors">
-            <h4 className="text-slate-200 font-bold mb-4">Security Posture</h4>
+            <h4 className="text-slate-200 font-bold mb-4">Security Practices</h4>
             <ul className="text-sm text-slate-400 space-y-3 font-mono">
-              <li className="flex items-center gap-3"><span className="text-emerald-400">✓</span> Strict CSP Headers applied</li>
-              <li className="flex items-center gap-3"><span className="text-emerald-400">✓</span> Zod Edge runtime validation</li>
-              <li className="flex items-center gap-3"><span className="text-emerald-400">✓</span> Redis-backed rate limiting</li>
+              <li className="flex items-center gap-3"><span className="text-emerald-400">✓</span> Strict Content Security Policies (CSP)</li>
+              <li className="flex items-center gap-3"><span className="text-emerald-400">✓</span> Input validation using Zod schemas</li>
+              <li className="flex items-center gap-3"><span className="text-emerald-400">✓</span> API rate limiting to reduce spam and abuse</li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* Technical Insights (Blog) Section */}
+      {/* Fullstack Insights (Blog) Section */}
       <section id="insights" aria-labelledby="insights-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-800/50">
         <div className="flex justify-between items-end mb-8">
-          <h3 id="insights-heading" className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase">04. Technical Insights</h3>
+          <h3 id="insights-heading" className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase">04. Fullstack Insights</h3>
           <Link href="#" className="text-xs font-mono text-slate-400 hover:text-[#D4AF37] transition-colors border-b border-transparent hover:border-[#D4AF37] pb-0.5">View Archive ↗</Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

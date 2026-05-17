@@ -6,12 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { getProjectAISummary } from "@/app/actions";
 // Database of searchable portfolio items and actions
 const COMMANDS = [
-  { id: "p1", title: "School Management System", category: "Projects", description: "Next.js • Node.js • PostgreSQL", link: "#projects" },
+  { id: "p1", title: "Smart School Management System", category: "Projects", description: "React • Node.js • MongoDB", link: "#projects" },
   { id: "p2", title: "Secure Authentication Service", category: "Projects", description: "Node.js • Redis • JWT", link: "#projects" },
   { id: "p3", title: "ImpactConnect", category: "Projects", description: "React • Node.js • MongoDB", link: "#projects" },
-  { id: "b1", title: "Scaling Next.js App Router", category: "Insights", description: "Read technical article on RSC architecture", link: "/insights/scaling-nextjs-app-router" },
-  { id: "b2", title: "JWT vs. Sessions", category: "Insights", description: "Read technical article on pragmatic auth", link: "/insights/jwt-vs-sessions" },
-  { id: "b3", title: "React Performance Optimizations", category: "Insights", description: "Read technical article on UI speed", link: "/insights/react-performance-optimizations" },
+  { id: "b1", title: "Building Better Fullstack Applications", category: "Insights", description: "Read practical insights on fullstack architecture", link: "/insights/building-better-fullstack-applications" },
+  { id: "b2", title: "Choosing the Right Authentication Approach", category: "Insights", description: "Read practical insights on pragmatic auth", link: "/insights/choosing-the-right-authentication-approach" },
+  { id: "b3", title: "Improving React Performance in Real Projects", category: "Insights", description: "Read practical insights on frontend speed", link: "/insights/improving-react-performance-in-real-projects" },
   { id: "s1", title: "Engineering Operating System", category: "Navigation", description: "Read my constraint-driven design manifesto", link: "#" },
   { id: "a1", title: "Download Resume", category: "Actions", description: "PDF Format (2026)", link: "#" },
   { id: "a2", title: "Copy Email Address", category: "Actions", description: "hello@cortexsystems.io", link: "#" },

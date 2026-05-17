@@ -44,7 +44,7 @@ export async function getGithubActivity() {
 }
 
 const projectSummaries: Record<string, string> = {
-  "p1": "AI Summary: The School Management System is a full-stack application leveraging Next.js (RSC) for optimized data tables and Node.js with PostgreSQL for robust backend operations. It prioritizes efficient administrative workflows and scalability under Vercel's serverless constraints.",
+  "p1": "AI Summary: The Smart School Management System is a full-stack MERN application tailored for modern African educational institutions. It features a robust multi-role authentication architecture using JWT and Context API, driving secure, isolated dashboards for admins, teachers, students, and parents. The system integrates an AI-assistant, Recharts analytics, and an Express REST API.",
   "p3": "AI Summary: ImpactConnect is a full-stack NGO management platform leveraging React (Vite) and Node.js/Express. It features secure JWT authentication, Paystack donation integration, and a MongoDB Atlas database. The architecture demonstrates clean, decoupled deployment with the frontend on Vercel and the REST API on Render."
 };
 
