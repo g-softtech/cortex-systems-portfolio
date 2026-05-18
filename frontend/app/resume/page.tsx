@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import PrintResumeButton from "@/components/print-resume-button";
 
 export const metadata: Metadata = {
   title: "Résumé | Cortex Systems",
@@ -14,7 +15,7 @@ export default function ResumePage() {
         <Link href="/" className="text-[#D4AF37] font-mono text-sm hover:text-white transition-colors">
           &larr; Return to Dashboard
         </Link>
-        <span className="text-slate-500 font-mono text-xs">Print to PDF (CTRL+P)</span>
+        <PrintResumeButton />
       </div>
 
       {/* Résumé Document */}
