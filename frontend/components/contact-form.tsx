@@ -36,13 +36,13 @@ export default function ContactForm() {
             <div className="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center mb-6 border border-emerald-500/20">
               <span className="text-emerald-400 text-2xl">✓</span>
             </div>
-            <h4 className="text-2xl font-bold text-white mb-2">Transmission Received</h4>
+            <h4 className="text-2xl font-bold text-white mb-2">Message Sent</h4>
             <p className="text-slate-400">Thank you for reaching out. I will review your message and respond shortly.</p>
             <button 
               onClick={() => setStatus("idle")}
               className="mt-8 px-6 py-2 border border-slate-700 hover:border-[#D4AF37] text-slate-300 font-mono text-sm rounded-md transition-colors"
             >
-              SEND_ANOTHER
+              Send Another
             </button>
           </motion.div>
         ) : (
@@ -72,11 +72,11 @@ export default function ContactForm() {
             </div>
             
             <div className="flex items-center justify-between mt-2">
-              <p className="text-xs text-slate-500 font-mono hidden md:block">Protected by Zod & Rate Limiting</p>
+              <p className="text-xs text-slate-500 font-mono hidden md:block">Built with secure form validation and spam protection.</p>
               <button type="submit" disabled={status === "loading"} className="w-full md:w-auto px-8 py-3 bg-[#D4AF37] text-[#0A192F] font-semibold rounded-md hover:bg-yellow-500 transition-all active:scale-95 font-mono text-sm disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2">
                 {status === "loading" ? (
-                  <><span className="w-4 h-4 border-2 border-[#0A192F]/30 border-t-[#0A192F] rounded-full animate-spin"></span>TRANSMITTING...</>
-                ) : status === "error" ? "ERROR - RETRY" : "INITIALIZE_CONTACT"}
+                  <><span className="w-4 h-4 border-2 border-[#0A192F]/30 border-t-[#0A192F] rounded-full animate-spin"></span>Sending...</>
+                ) : status === "error" ? "Error - Retry" : "Send Message"}
               </button>
             </div>
           </motion.form>

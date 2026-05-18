@@ -13,7 +13,7 @@ const COMMANDS = [
   { id: "b2", title: "Choosing the Right Authentication Approach", category: "Insights", description: "Read practical insights on pragmatic auth", link: "/insights/choosing-the-right-authentication-approach" },
   { id: "b3", title: "Improving React Performance in Real Projects", category: "Insights", description: "Read practical insights on frontend speed", link: "/insights/improving-react-performance-in-real-projects" },
   { id: "s1", title: "Engineering Operating System", category: "Navigation", description: "Read my constraint-driven design manifesto", link: "#" },
-  { id: "a1", title: "Download Resume", category: "Actions", description: "PDF Format (2026)", link: "#" },
+  { id: "a1", title: "View Résumé", category: "Actions", description: "Professional history and skills", link: "/resume" },
   { id: "a2", title: "Copy Email Address", category: "Actions", description: "hello@cortexsystems.io", link: "#" },
   { id: "c1", title: "Initialize Contact", category: "Navigation", description: "Send a secure message", link: "#contact" },
 ];
@@ -83,18 +83,35 @@ export default function CommandMenu() {
   };
 
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-100 flex items-start justify-center pt-[10vh] md:pt-[20vh] px-4 bg-[#0A192F]/80 backdrop-blur-sm"
-          onClick={() => setIsOpen(false)}
-          role="dialog"
-          aria-modal="true"
-          aria-label="AI Command Center"
-        >
+    <>
+      {/* Mobile Floating Action Button */}
+      <AnimatePresence>
+        {!isOpen && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            onClick={() => setIsOpen(true)}
+            className="md:hidden fixed bottom-20 right-6 z-50 flex items-center gap-2 px-5 py-3 rounded-full bg-[#0A192F]/90 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] font-mono text-sm shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all active:scale-95"
+            aria-label="Open Ask Cortex Command Center"
+          >
+            <span className="text-xs">✦</span> Ask Cortex
+          </motion.button>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-100 flex items-start justify-center pt-[5vh] md:pt-[20vh] px-4 bg-[#0A192F]/80 backdrop-blur-sm"
+            onClick={() => setIsOpen(false)}
+            role="dialog"
+            aria-modal="true"
+            aria-label="AI Command Center"
+          >
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -109,14 +126,15 @@ export default function CommandMenu() {
                 id="command-menu-search"
                 aria-label="Search portfolio or ask AI"
                 placeholder="Ask AI or navigate (e.g. 'show projects with secure auth')..."
-                className="flex-1 border-none bg-transparent font-mono text-sm md:text-base text-slate-200 placeholder-slate-500 outline-none focus:ring-0"
+                /* text-base prevents iOS Safari from automatically zooming in on the input */
+                className="flex-1 border-none bg-transparent font-mono text-base text-slate-200 placeholder-slate-500 outline-none focus:ring-0"
                 autoFocus
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <kbd className="hidden sm:inline-block bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700 text-xs text-[#D4AF37] font-mono">ESC</kbd>
             </div>
-            <div className="p-4 max-h-100 overflow-y-auto font-mono text-sm text-slate-400" aria-live="polite">
+            <div className="p-4 max-h-[60vh] md:max-h-100 overflow-y-auto font-mono text-sm text-slate-400" aria-live="polite">
               {searchQuery === "" && (
                 <p className="mb-4 text-[#D4AF37]/80">SYSTEM: AI Command Center initialized. Awaiting query...</p>
               )}
@@ -181,6 +199,7 @@ export default function CommandMenu() {
           </AnimatePresence>
         </motion.div>
       )}
-    </AnimatePresence>
+        </AnimatePresence>
+    </>
   );
 }
