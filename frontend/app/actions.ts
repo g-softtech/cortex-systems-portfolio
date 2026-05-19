@@ -1,5 +1,9 @@
 "use server";
 
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export async function checkBackendStatus() {
   return "online";
 }
@@ -60,16 +64,31 @@ export async function getProjectAISummary(projectId: string) {
 
 export async function submitContactForm(formData: FormData) {
   try {
-    // Simulate network delay and backend Zod validation
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    const email = formData.get("email");
-    const message = formData.get("message");
-    
-    if (!email || !message) return { success: false, error: "Validation failed" };
-    
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+    const name = formData.get("name") as string;
+    const projectType = formData.get("projectType") as string;
+
+    if (!email || !message || !name) {
+      return { success: false, error: "Validation failed" };
+    }
+
+    const { error } = await resend.emails.send({
+      from: 'Cortex Portfolio <onboarding@resend.dev>', // Resend testing email
+      to: 'tosinjaiyeoba@yahoo.com', // Your actual email address
+      subject: `New Inquiry from ${name} - ${projectType}`,
+      text: `Name: ${name}\nEmail: ${email}\nInquiry Type: ${projectType}\n\nMessage:\n${message}`,
+      reply_to: email, // Lets you hit "reply" directly in your email client
+    });
+
+    if (error) {
+      console.error("Resend Delivery Error:", error);
+      return { success: false, error: "Transmission failed" };
+    }
+
     return { success: true };
   } catch (error) {
+    console.error("Server Action Error:", error);
     return { success: false, error: "Transmission failed" };
   }
 }
