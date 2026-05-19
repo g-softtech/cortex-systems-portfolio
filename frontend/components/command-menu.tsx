@@ -66,6 +66,14 @@ export default function CommandMenu() {
         setToast(null);
         setIsOpen(false);
       }, 2000);
+    } else if (cmd.id === "a1") {
+      const link = document.createElement("a");
+      link.href = cmd.link;
+      link.download = "Gbemisola_Awodiya_Resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setIsOpen(false);
     } else if (cmd.link !== "#") {
       // For project links, fetch AI summary first
       if (cmd.category === "Projects") {
