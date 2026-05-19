@@ -40,9 +40,9 @@ export default function Page() {
              <span className="flex items-center gap-1"><kbd className="bg-slate-800 border border-slate-700 rounded px-2 py-0.5 text-xs text-[#D4AF37]">CTRL</kbd><kbd className="bg-slate-800 border border-slate-700 rounded px-2 py-0.5 text-xs text-[#D4AF37]">K</kbd></span>
                <span>to launch Command Center</span>
              </button>
-             <Link href="/resume" className="px-6 py-3 border border-slate-700 hover:border-[#D4AF37] text-white font-semibold rounded-md transition-all active:scale-95 font-mono text-sm flex items-center gap-2 bg-[#0A192F]/50 backdrop-blur-sm">
+             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-slate-700 hover:border-[#D4AF37] text-white font-semibold rounded-md transition-all active:scale-95 font-mono text-sm flex items-center gap-2 bg-[#0A192F]/50 backdrop-blur-sm">
                RÉSUMÉ ↗
-             </Link>
+             </a>
            </div>
            <p className="mt-4 text-xs font-mono text-slate-500 md:hidden">
              Tap 'Ask Cortex' below to explore projects, articles, and architecture insights.
@@ -271,9 +271,9 @@ export default function Page() {
           <h2 id="contact-heading" className="text-3xl md:text-5xl font-bold text-white mb-4">Get In Touch</h2>
           <p className="text-slate-400 max-w-xl mx-auto leading-relaxed">Whether you’re building a new product, improving an existing platform, or looking for a reliable fullstack developer, I’d love to hear about your project and explore how we can work together.</p>
           <div className="mt-6">
-            <Link href="/resume" className="inline-flex items-center gap-2 text-sm font-mono text-[#D4AF37] hover:text-white transition-colors border-b border-transparent hover:border-[#D4AF37] pb-0.5">
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-mono text-[#D4AF37] hover:text-white transition-colors border-b border-transparent hover:border-[#D4AF37] pb-0.5">
               <span>📄</span> View & Download Résumé ↗
-            </Link>
+            </a>
           </div>
         </div>
         
