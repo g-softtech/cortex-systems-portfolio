@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import CommandMenu from "../components/command-menu";
 import SystemStatus from "../components/system-status";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
@@ -43,6 +44,7 @@ export default function RootLayout({
             Developed by <span className="text-[#D4AF37]">Cortex Systems</span> &copy; 2026
           </p>
         </footer>
+        <Analytics />
       </body>
     </html>
   );

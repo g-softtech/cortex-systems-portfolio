@@ -78,7 +78,7 @@ export async function submitContactForm(formData: FormData) {
       to: 'tosinjaiyeoba@yahoo.com', // Your actual email address
       subject: `New Inquiry from ${name} - ${projectType}`,
       text: `Name: ${name}\nEmail: ${email}\nInquiry Type: ${projectType}\n\nMessage:\n${message}`,
-      reply_to: email, // Lets you hit "reply" directly in your email client
+      replyTo: email, // Lets you hit "reply" directly in your email client
     });
 
     if (error) {

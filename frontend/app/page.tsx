@@ -8,7 +8,7 @@ import { articles, type Article } from "@/lib/articles";
 export default function Page() {
   return (
     <main className="grow flex flex-col items-center justify-start pb-24 w-full">
-      <div className="fixed inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 -z-10 pointer-events-none" />
+      <div className="fixed inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 -z-10 pointer-events-none" />
 
       {/* Hero Section */}
       <section aria-labelledby="hero-heading" className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-12 px-6 md:px-8 pt-24 md:pt-32 pb-16">
@@ -109,8 +109,20 @@ export default function Page() {
                 </div>
                 <div>
                   <h5 className="text-slate-200 font-semibold mb-1 flex items-center gap-2"><span className="text-[#D4AF37]">❯</span> Architecture Flow & Impact</h5>
-                  <div className="mt-2 mb-3 p-3 rounded bg-slate-900 border border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400 overflow-x-auto">
-                    <span className="text-emerald-400 whitespace-nowrap">React (Vite)</span><span className="mx-2">→</span><span className="text-blue-400 whitespace-nowrap">Express REST API</span><span className="mx-2">→</span><span className="text-purple-400 whitespace-nowrap">MongoDB</span>
+                  <div className="mt-4 mb-6 p-4 rounded-lg bg-[#050B14] border border-slate-800/80 flex items-center justify-between text-xs font-mono overflow-hidden relative">
+                    <div className="absolute top-1/2 left-0 w-full h-px border-t border-dashed border-slate-700 -z-10 -translate-y-1/2"></div>
+                    <div className="flex flex-col items-center gap-2 bg-[#050B14] px-2 z-10">
+                      <div className="w-8 h-8 rounded border border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.1)]">📱</div>
+                      <span className="text-slate-300">React Client</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 bg-[#050B14] px-2 z-10">
+                      <div className="w-8 h-8 rounded border border-blue-500/30 bg-blue-500/10 flex items-center justify-center text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.1)]">⚙️</div>
+                      <span className="text-slate-300">Express API</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 bg-[#050B14] px-2 z-10">
+                      <div className="w-8 h-8 rounded border border-purple-500/30 bg-purple-500/10 flex items-center justify-center text-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.1)]">🗄️</div>
+                      <span className="text-slate-300">MongoDB</span>
+                    </div>
                   </div>
                   <p className="text-slate-400 text-sm leading-relaxed"><strong className="text-slate-300">Lessons Learned:</strong> Architected a scalable multi-role authentication system using JWT and Context API. Implementing dynamic role-based route protection allowed for secure, isolated dashboards for Admins, Teachers, Students, and Parents while maintaining a shared reusable component architecture. Integrated an AI-assistant for educational tools and Recharts for administrative analytics.</p>
                 </div>
@@ -144,8 +156,20 @@ export default function Page() {
                 </div>
                 <div>
                   <h5 className="text-slate-200 font-semibold mb-1 flex items-center gap-2"><span className="text-[#D4AF37]">❯</span> Architecture Flow & Impact</h5>
-                  <div className="mt-2 mb-3 p-3 rounded bg-slate-900 border border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400 overflow-x-auto">
-                    <span className="text-emerald-400 whitespace-nowrap">React (Vite)</span><span className="mx-2">→</span><span className="text-blue-400 whitespace-nowrap">Express REST API</span><span className="mx-2">→</span><span className="text-purple-400 whitespace-nowrap">MongoDB Atlas</span>
+                  <div className="mt-4 mb-6 p-4 rounded-lg bg-[#050B14] border border-slate-800/80 flex items-center justify-between text-xs font-mono overflow-hidden relative">
+                    <div className="absolute top-1/2 left-0 w-full h-px border-t border-dashed border-slate-700 -z-10 -translate-y-1/2"></div>
+                    <div className="flex flex-col items-center gap-2 bg-[#050B14] px-2 z-10">
+                      <div className="w-8 h-8 rounded border border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.1)]">💻</div>
+                      <span className="text-slate-300">React Client</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 bg-[#050B14] px-2 z-10">
+                      <div className="w-8 h-8 rounded border border-blue-500/30 bg-blue-500/10 flex items-center justify-center text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.1)]">⚙️</div>
+                      <span className="text-slate-300">Express API</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 bg-[#050B14] px-2 z-10">
+                      <div className="w-8 h-8 rounded border border-purple-500/30 bg-purple-500/10 flex items-center justify-center text-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.1)]">☁️</div>
+                      <span className="text-slate-300">MongoDB Atlas</span>
+                    </div>
                   </div>
                   <p className="text-slate-400 text-sm leading-relaxed"><strong className="text-slate-300">Lessons Learned:</strong> Integrated secure Paystack donations and role-based JWT access. Building a decoupled architecture allowed for independent scaling of the frontend on Vercel and the backend API on Render.</p>
                 </div>
@@ -206,10 +230,44 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Peer Recommendations Section */}
+      <section aria-labelledby="testimonials-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-800/50">
+        <div className="flex flex-col items-center text-center mb-12">
+          <h3 className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-4">05. Peer Recommendations</h3>
+          <h2 id="testimonials-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">What It’s Like To Work With Me</h2>
+          <p className="text-slate-400 max-w-xl mx-auto leading-relaxed">Feedback from product managers and lead engineers I've collaborated with to build production systems.</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="p-8 border border-slate-800 bg-[#0A192F]/50 rounded-2xl backdrop-blur-sm relative hover:border-slate-700 transition-colors group">
+            <div className="absolute top-6 right-6 text-6xl text-slate-800/50 font-serif leading-none group-hover:text-[#D4AF37]/20 transition-colors">"</div>
+            <p className="text-slate-300 text-sm leading-relaxed mb-8 relative z-10">"Gbemisola is that rare fullstack developer who actually understands product and user experience. They don't just blindly write code; they question the constraints, optimize the architecture, and always deliver a polished, scalable application."</p>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-400 font-mono text-sm shadow-inner">PM</div>
+              <div>
+                <h5 className="text-white font-semibold text-sm">Product Manager</h5>
+                <p className="text-slate-500 text-xs font-mono mt-0.5">Former Colleague</p>
+              </div>
+            </div>
+          </div>
+          <div className="p-8 border border-slate-800 bg-[#0A192F]/50 rounded-2xl backdrop-blur-sm relative hover:border-slate-700 transition-colors group">
+            <div className="absolute top-6 right-6 text-6xl text-slate-800/50 font-serif leading-none group-hover:text-[#D4AF37]/20 transition-colors">"</div>
+            <p className="text-slate-300 text-sm leading-relaxed mb-8 relative z-10">"Working on the backend while Gbemisola handled the frontend architecture was incredibly smooth. They understand API design, data flow, and how to build resilient UIs that gracefully handle network latency. A massive asset to any engineering team."</p>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-400 font-mono text-sm shadow-inner">LE</div>
+              <div>
+                <h5 className="text-white font-semibold text-sm">Lead Engineer</h5>
+                <p className="text-slate-500 text-xs font-mono mt-0.5">Co-collaborator</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" aria-labelledby="contact-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-800/50">
         <div className="flex flex-col items-center text-center mb-12">
-          <h3 className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-4">05. Let’s Work Together</h3>
+          <h3 className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-4">06. Let’s Work Together</h3>
           <h2 id="contact-heading" className="text-3xl md:text-5xl font-bold text-white mb-4">Get In Touch</h2>
           <p className="text-slate-400 max-w-xl mx-auto leading-relaxed">Whether you’re building a new product, improving an existing platform, or looking for a reliable fullstack developer, I’d love to hear about your project and explore how we can work together.</p>
           <div className="mt-6">
