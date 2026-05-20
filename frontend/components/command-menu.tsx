@@ -13,7 +13,6 @@ const COMMANDS = [
   { id: "b2", title: "Choosing the Right Authentication Approach", category: "Insights", description: "Read practical insights on pragmatic auth", link: "/insights/choosing-the-right-authentication-approach" },
   { id: "b3", title: "Improving React Performance in Real Projects", category: "Insights", description: "Read practical insights on frontend speed", link: "/insights/improving-react-performance-in-real-projects" },
   { id: "s1", title: "Engineering Operating System", category: "Navigation", description: "Read my constraint-driven design manifesto", link: "#" },
-  { id: "e1", title: "Professional Experience & Education", category: "Navigation", description: "View my career history", link: "#experience" },
   { id: "t1", title: "Core Competencies", category: "Navigation", description: "View my tech stack and tools", link: "#tech" },
   { id: "a1", title: "View Résumé", category: "Actions", description: "Professional history and skills", link: "/resume.pdf" },
   { id: "a2", title: "Copy Email Address", category: "Actions", description: "hello@cortexsystems.io", link: "#" },
