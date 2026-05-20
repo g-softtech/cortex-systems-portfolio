@@ -1,14 +1,17 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode in Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
 @layer base {
   body {
-    @apply bg-[#0A192F] text-slate-200 antialiased;
+    @apply bg-slate-50 text-slate-900 dark:bg-[#0A192F] dark:text-slate-200 antialiased transition-colors duration-300;
     /* Custom selection color to match the Cortex Gold brand */
     @apply selection:bg-[#D4AF37] selection:text-[#0A192F];
   }
 
   /* Premium accessibility focus ring for keyboard navigation */
   *:focus-visible {
-    @apply outline-none ring-2 ring-[#D4AF37] ring-offset-2 ring-offset-[#0A192F] rounded-sm transition-shadow duration-200;
+    @apply outline-none ring-2 ring-[#D4AF37] ring-offset-2 ring-offset-slate-50 dark:ring-offset-[#0A192F] rounded-sm transition-shadow duration-200;
   }
 }

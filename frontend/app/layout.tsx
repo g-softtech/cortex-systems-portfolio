@@ -4,6 +4,8 @@ import "./globals.css";
 import CommandMenu from "../components/command-menu";
 import SystemStatus from "../components/system-status";
 import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider } from "./theme-provider";
+import ThemeToggle from "../components/theme-toggle";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
@@ -32,19 +34,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <body className="font-sans min-h-screen flex flex-col">
-        {children}
-        <CommandMenu />
-        <div className="fixed bottom-6 right-6 z-50">
-          <SystemStatus />
-        </div>
-        <footer className="w-full text-center py-6 text-xs font-mono text-slate-500">
-          <p>
-            Developed by <span className="text-[#D4AF37]">Cortex Systems</span> &copy; 2026
-          </p>
-        </footer>
-        <Analytics />
+        <ThemeProvider>
+          {children}
+          <ThemeToggle />
+          <CommandMenu />
+          <div className="fixed bottom-6 right-6 z-50">
+            <SystemStatus />
+          </div>
+          <footer className="w-full text-center py-6 text-xs font-mono text-slate-500">
+            <p>
+              Developed by <span className="text-[#D4AF37]">Cortex Systems</span> &copy; 2026
+            </p>
+          </footer>
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
