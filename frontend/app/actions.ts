@@ -1,5 +1,7 @@
 "use server";
 
+import { generateText } from "ai";
+import { groq } from "@ai-sdk/groq";
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -53,12 +55,34 @@ const projectSummaries: Record<string, string> = {
 };
 
 export async function getProjectAISummary(projectId: string) {
+  // 1. Fallback if no API key is provided, using the old simulated summary
+  if (!process.env.GROQ_API_KEY) {
+    await new Promise((resolve) => setTimeout(resolve, 800)); // Keep the simulated delay
+    const simulatedSummary = projectSummaries[projectId] || "AI Summary: No detailed architectural summary available for this project yet.";
+    return `SYSTEM: GROQ_API_KEY missing. Using simulated response.\n\n${simulatedSummary}`;
+  }
+
+  // 2. Feed the AI the exact context of your projects
+  const projectContexts: Record<string, string> = {
+    "p1": "Smart School Management System: A full-stack MERN (MongoDB, Express, React, Node.js) platform for modern African educational institutions. Features a scalable multi-role authentication system using JWT, isolated dashboards for Admins, Teachers, Students, and Parents, AI-assistant integration for educational tools, and Recharts for administrative analytics.",
+    "p2": "Secure Authentication Service: A microservice built with Node.js, Redis, and JWT for handling secure user authentication, rate limiting, and session management. Focuses on high performance and security.",
+    "p3": "ImpactConnect: A modern full-stack NGO management platform (MERN stack) for managing projects, receiving donations via Paystack, and publishing impact stories. Features decoupled architecture scaling frontend on Vercel and backend on Render."
+  };
+
+  const context = projectContexts[projectId] || "Unknown project.";
+
   try {
-    // Simulate the AI generation network delay
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    return projectSummaries[projectId] || "AI Summary: No detailed architectural summary available for this project yet.";
+    // 3. Call Groq using Vercel's unified generateText function
+    const { text } = await generateText({
+      model: groq("llama3-8b-8192"), // Using a fast, free model on Groq
+      system: "You are an elite senior software architect reviewing a portfolio. Given a project description, provide a highly technical, concise, 2-sentence architectural summary highlighting the engineering value, constraints handled, and system design. Output pure text, no markdown. Use a professional, analytical tone.",
+      prompt: `Analyze and summarize this project architecture: ${context}`
+    });
+
+    return text;
   } catch (error) {
-    return "AI Summary: Backend error or project not found.";
+    console.error("Groq AI Generation Error:", error);
+    return "SYSTEM ERROR: Unable to reach Groq AI models to generate architectural summary at this time.";
   }
 }
 

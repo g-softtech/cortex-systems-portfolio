@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "reactflow/dist/style.css";
 
 /* Enable class-based dark mode in Tailwind v4 */
 @variant dark (&:where(.dark, .dark *));

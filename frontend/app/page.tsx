@@ -2,6 +2,7 @@
 import GithubActivity from "@/components/github-activity";
 import Image from "next/image";
 import ContactForm from "@/components/contact-form";
+import ArchitectureDiagram from "@/components/architecture-diagram";
 import Link from "next/link";
 import { articles, type Article } from "@/lib/articles";
 
@@ -143,21 +144,7 @@ export default function Page() {
                 </div>
                 <div>
                   <h5 className="text-slate-800 dark:text-slate-200 font-semibold mb-1 flex items-center gap-2"><span className="text-[#D4AF37]">❯</span> Architecture Flow & Impact</h5>
-                  <div className="mt-4 mb-6 p-4 rounded-lg bg-slate-50 dark:bg-[#050B14] border border-slate-200 dark:border-slate-800/80 flex items-center justify-between text-xs font-mono overflow-hidden relative">
-                    <div className="absolute top-1/2 left-0 w-full h-px border-t border-dashed border-slate-300 dark:border-slate-700 -z-10 -translate-y-1/2"></div>
-                    <div className="flex flex-col items-center gap-2 bg-slate-50 dark:bg-[#050B14] px-2 z-10">
-                      <div className="w-8 h-8 rounded border border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.1)]">📱</div>
-                      <span className="text-slate-700 dark:text-slate-300">React Client</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-2 bg-slate-50 dark:bg-[#050B14] px-2 z-10">
-                      <div className="w-8 h-8 rounded border border-blue-500/30 bg-blue-500/10 flex items-center justify-center text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.1)]">⚙️</div>
-                      <span className="text-slate-700 dark:text-slate-300">Express API</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-2 bg-slate-50 dark:bg-[#050B14] px-2 z-10">
-                      <div className="w-8 h-8 rounded border border-purple-500/30 bg-purple-500/10 flex items-center justify-center text-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.1)]">🗄️</div>
-                      <span className="text-slate-700 dark:text-slate-300">MongoDB</span>
-                    </div>
-                  </div>
+                  <div className="mt-4 mb-6"><ArchitectureDiagram /></div>
                   <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"><strong className="text-slate-900 dark:text-slate-300">Lessons Learned:</strong> Architected a scalable multi-role authentication system using JWT and Context API. Implementing dynamic role-based route protection allowed for secure, isolated dashboards for Admins, Teachers, Students, and Parents while maintaining a shared reusable component architecture. Integrated an AI-assistant for educational tools and Recharts for administrative analytics.</p>
                 </div>
               </div>
