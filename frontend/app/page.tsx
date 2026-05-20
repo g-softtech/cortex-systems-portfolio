@@ -179,9 +179,49 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Professional Experience Section */}
+      <section id="experience" aria-labelledby="experience-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-800/50">
+        <div className="mb-12">
+          <h3 id="experience-heading" className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-3">03. Professional Experience & Education</h3>
+          <p className="text-slate-400">My technical background and professional history.</p>
+        </div>
+        <div className="flex flex-col gap-8">
+          <div className="p-8 border border-slate-800 bg-[#0A192F]/50 rounded-xl backdrop-blur-sm relative hover:border-slate-700 transition-colors group">
+            <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+              <div>
+                <h4 className="text-2xl font-bold text-white mb-1">Fullstack Developer</h4>
+                <div className="text-lg text-[#D4AF37] font-mono">I4 Technologies</div>
+              </div>
+            </div>
+            <ul className="space-y-4 text-slate-400 text-sm leading-relaxed font-mono">
+              <li className="flex items-start gap-3">
+                <span className="text-[#D4AF37] mt-0.5">❯</span>
+                <span>Developed modern business and web applications for clients across different industries.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#D4AF37] mt-0.5">❯</span>
+                <span>Built responsive frontend interfaces and backend integrations.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#D4AF37] mt-0.5">❯</span>
+                <span>Improved usability, maintainability, and performance of deployed applications.</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div className="p-8 border border-slate-800 bg-[#0A192F]/50 rounded-xl backdrop-blur-sm relative hover:border-slate-700 transition-colors group">
+            <h4 className="text-xl font-bold text-white mb-4">Education</h4>
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="flex items-center gap-3 bg-slate-900 border border-slate-800 px-4 py-3 rounded-md text-sm font-mono text-slate-300"><span className="text-[#D4AF37]">🎓</span> M.Sc. Information Technology</div>
+              <div className="flex items-center gap-3 bg-slate-900 border border-slate-800 px-4 py-3 rounded-md text-sm font-mono text-slate-300"><span className="text-[#D4AF37]">🎓</span> B.Tech. Computer Science</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Performance & Reliability Section */}
       <section aria-labelledby="reliability-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-800/50">
-        <h3 id="reliability-heading" className="text-sm font-mono text-[#D4AF37] mb-8 tracking-widest uppercase">03. Performance & Reliability</h3>
+        <h3 id="reliability-heading" className="text-sm font-mono text-[#D4AF37] mb-8 tracking-widest uppercase">04. Performance & Reliability</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-6 border border-slate-800 bg-[#0A192F]/50 rounded-xl backdrop-blur-sm hover:border-slate-700 transition-colors group">
             <h4 className="text-slate-200 font-bold mb-4 flex items-center justify-between">Lighthouse Baseline <span className="text-xs font-mono text-slate-500 group-hover:text-[#D4AF37] transition-colors">LIVE</span></h4>
@@ -211,7 +251,7 @@ export default function Page() {
       {/* Fullstack Insights (Blog) Section */}
       <section id="insights" aria-labelledby="insights-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-800/50">
         <div className="flex justify-between items-end mb-8">
-          <h3 id="insights-heading" className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase">04. Fullstack Insights</h3>
+          <h3 id="insights-heading" className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase">05. Fullstack Insights</h3>
           <Link href="#" className="text-xs font-mono text-slate-400 hover:text-[#D4AF37] transition-colors border-b border-transparent hover:border-[#D4AF37] pb-0.5">View Archive ↗</Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -233,7 +273,7 @@ export default function Page() {
       {/* Peer Recommendations Section */}
       <section aria-labelledby="testimonials-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-800/50">
         <div className="flex flex-col items-center text-center mb-12">
-          <h3 className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-4">05. Peer Recommendations</h3>
+          <h3 className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-4">06. Peer Recommendations</h3>
           <h2 id="testimonials-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">What It’s Like To Work With Me</h2>
           <p className="text-slate-400 max-w-xl mx-auto leading-relaxed">Feedback from product managers and lead engineers I've collaborated with to build production systems.</p>
         </div>
@@ -267,7 +307,7 @@ export default function Page() {
       {/* Contact Section */}
       <section id="contact" aria-labelledby="contact-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-800/50">
         <div className="flex flex-col items-center text-center mb-12">
-          <h3 className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-4">06. Let’s Work Together</h3>
+          <h3 className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-4">07. Let’s Work Together</h3>
           <h2 id="contact-heading" className="text-3xl md:text-5xl font-bold text-white mb-4">Get In Touch</h2>
           <p className="text-slate-400 max-w-xl mx-auto leading-relaxed">Whether you’re building a new product, improving an existing platform, or looking for a reliable fullstack developer, I’d love to hear about your project and explore how we can work together.</p>
           <div className="mt-6">
