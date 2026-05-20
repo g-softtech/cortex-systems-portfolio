@@ -76,10 +76,44 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Tech Stack Section */}
+      <section id="tech" aria-labelledby="tech-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-200 dark:border-slate-800/50">
+        <div className="mb-12">
+          <h3 id="tech-heading" className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-3">02. Core Competencies</h3>
+          <p className="text-slate-600 dark:text-slate-400">The languages, frameworks, and infrastructure I use to build scalable products.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-6 border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-[#0A192F]/50 rounded-xl backdrop-blur-sm hover:border-slate-300 dark:hover:border-slate-700 transition-colors group">
+            <h4 className="text-slate-900 dark:text-white font-bold mb-4 flex items-center gap-2"><span className="text-[#D4AF37] group-hover:scale-110 transition-transform">🖥️</span> Frontend</h4>
+            <div className="flex flex-wrap gap-2">
+              {['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'HTML5/CSS3'].map(tech => (
+                <span key={tech} className="px-3 py-1 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-md text-xs font-mono text-slate-700 dark:text-slate-300 shadow-sm">{tech}</span>
+              ))}
+            </div>
+          </div>
+          <div className="p-6 border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-[#0A192F]/50 rounded-xl backdrop-blur-sm hover:border-slate-300 dark:hover:border-slate-700 transition-colors group">
+            <h4 className="text-slate-900 dark:text-white font-bold mb-4 flex items-center gap-2"><span className="text-[#D4AF37] group-hover:scale-110 transition-transform">⚙️</span> Backend</h4>
+            <div className="flex flex-wrap gap-2">
+              {['Node.js', 'Express.js', 'REST APIs', 'Server Actions', 'JWT Auth'].map(tech => (
+                <span key={tech} className="px-3 py-1 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-md text-xs font-mono text-slate-700 dark:text-slate-300 shadow-sm">{tech}</span>
+              ))}
+            </div>
+          </div>
+          <div className="p-6 border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-[#0A192F]/50 rounded-xl backdrop-blur-sm hover:border-slate-300 dark:hover:border-slate-700 transition-colors group">
+            <h4 className="text-slate-900 dark:text-white font-bold mb-4 flex items-center gap-2"><span className="text-[#D4AF37] group-hover:scale-110 transition-transform">🗄️</span> Database & Tools</h4>
+            <div className="flex flex-wrap gap-2">
+              {['MongoDB', 'PostgreSQL', 'Supabase', 'Firebase', 'Git/GitHub', 'Vercel', 'Render'].map(tech => (
+                <span key={tech} className="px-3 py-1 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-md text-xs font-mono text-slate-700 dark:text-slate-300 shadow-sm">{tech}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" aria-labelledby="projects-heading" className="w-full max-w-6xl px-6 md:px-8 py-16">
         <div className="mb-12">
-          <h3 id="projects-heading" className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-3">02. Featured Projects & Systems</h3>
+          <h3 id="projects-heading" className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-3">03. Featured Projects & Systems</h3>
           <p className="text-slate-400">Production-grade fullstack applications I’ve built and maintained.</p>
         </div>
         <div className="flex flex-col gap-12">
@@ -182,7 +216,7 @@ export default function Page() {
       {/* Professional Experience Section */}
       <section id="experience" aria-labelledby="experience-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-200 dark:border-slate-800/50">
         <div className="mb-12">
-          <h3 id="experience-heading" className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-3">03. Professional Experience & Education</h3>
+          <h3 id="experience-heading" className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-3">04. Professional Experience & Education</h3>
           <p className="text-slate-400">My technical background and professional history.</p>
         </div>
         <div className="flex flex-col gap-8">
@@ -221,7 +255,7 @@ export default function Page() {
 
       {/* Performance & Reliability Section */}
       <section aria-labelledby="reliability-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-200 dark:border-slate-800/50">
-        <h3 id="reliability-heading" className="text-sm font-mono text-[#D4AF37] mb-8 tracking-widest uppercase">04. Performance & Reliability</h3>
+        <h3 id="reliability-heading" className="text-sm font-mono text-[#D4AF37] mb-8 tracking-widest uppercase">05. Performance & Reliability</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-6 border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-[#0A192F]/50 rounded-xl backdrop-blur-sm hover:border-slate-300 dark:hover:border-slate-700 transition-colors group">
             <h4 className="text-slate-800 dark:text-slate-200 font-bold mb-4 flex items-center justify-between">Lighthouse Baseline <span className="text-xs font-mono text-slate-500 group-hover:text-[#D4AF37] transition-colors">LIVE</span></h4>
@@ -251,7 +285,7 @@ export default function Page() {
       {/* Fullstack Insights (Blog) Section */}
       <section id="insights" aria-labelledby="insights-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-200 dark:border-slate-800/50">
         <div className="flex justify-between items-end mb-8">
-          <h3 id="insights-heading" className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase">05. Fullstack Insights</h3>
+          <h3 id="insights-heading" className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase">06. Fullstack Insights</h3>
           <Link href="#" className="text-xs font-mono text-slate-400 hover:text-[#D4AF37] transition-colors border-b border-transparent hover:border-[#D4AF37] pb-0.5">View Archive ↗</Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -273,7 +307,7 @@ export default function Page() {
       {/* Peer Recommendations Section */}
       <section aria-labelledby="testimonials-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-200 dark:border-slate-800/50">
         <div className="flex flex-col items-center text-center mb-12">
-          <h3 className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-4">06. Peer Recommendations</h3>
+          <h3 className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-4">07. Peer Recommendations</h3>
           <h2 id="testimonials-heading" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">What It’s Like To Work With Me</h2>
           <p className="text-slate-600 dark:text-slate-400 max-w-xl mx-auto leading-relaxed">Feedback from product managers and lead engineers I've collaborated with to build production systems.</p>
         </div>
@@ -307,7 +341,7 @@ export default function Page() {
       {/* Contact Section */}
       <section id="contact" aria-labelledby="contact-heading" className="w-full max-w-6xl px-6 md:px-8 py-16 border-t border-slate-200 dark:border-slate-800/50">
         <div className="flex flex-col items-center text-center mb-12">
-          <h3 className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-4">07. Let’s Work Together</h3>
+          <h3 className="text-sm font-mono text-[#D4AF37] tracking-widest uppercase mb-4">08. Let’s Work Together</h3>
           <h2 id="contact-heading" className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">Get In Touch</h2>
           <p className="text-slate-600 dark:text-slate-400 max-w-xl mx-auto leading-relaxed">Whether you’re building a new product, improving an existing platform, or looking for a reliable fullstack developer, I’d love to hear about your project and explore how we can work together.</p>
           <div className="mt-6">
