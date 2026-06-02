@@ -275,7 +275,7 @@ export default function Page() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-8 border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-[#0A192F]/50 rounded-2xl backdrop-blur-sm relative hover:border-slate-300 dark:hover:border-slate-700 transition-colors group">
             <div className="absolute top-6 right-6 text-6xl text-slate-200 dark:text-slate-800/50 font-serif leading-none group-hover:text-[#D4AF37]/20 transition-colors">"</div>
-            <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-8 relative z-10">"Gbemisola is that rare fullstack developer who actually understands product and user experience. They don't just blindly write code; they question the constraints, optimize the architecture, and always deliver a polished, scalable application."</p>
+            <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-8 relative z-10">"Gbemisola is that rare fullstack developer who actually understands product and user experience. She doesn't just blindly write code; she questions the constraints, optimize the architecture, and always deliver a polished, scalable application."</p>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400 font-mono text-sm shadow-inner">PM</div>
               <div>
@@ -286,7 +286,7 @@ export default function Page() {
           </div>
           <div className="p-8 border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-[#0A192F]/50 rounded-2xl backdrop-blur-sm relative hover:border-slate-300 dark:hover:border-slate-700 transition-colors group">
             <div className="absolute top-6 right-6 text-6xl text-slate-200 dark:text-slate-800/50 font-serif leading-none group-hover:text-[#D4AF37]/20 transition-colors">"</div>
-            <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-8 relative z-10">"Working on the backend while Gbemisola handled the frontend architecture was incredibly smooth. They understand API design, data flow, and how to build resilient UIs that gracefully handle network latency. A massive asset to any engineering team."</p>
+            <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-8 relative z-10">"Working on the backend while Gbemisola handled the frontend architecture was incredibly smooth. She understands API design, data flow, and how to build resilient UIs that gracefully handle network latency. A massive asset to any engineering team."</p>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400 font-mono text-sm shadow-inner">LE</div>
               <div>
