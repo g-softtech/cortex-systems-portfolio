@@ -1,18 +1,26 @@
 @import "tailwindcss";
-@import "reactflow/dist/style.css";
 
-/* Enable class-based dark mode in Tailwind v4 */
-@variant dark (&:where(.dark, .dark *));
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
 
-@layer base {
-  body {
-    @apply bg-slate-50 text-slate-900 dark:bg-[#0A192F] dark:text-slate-200 antialiased transition-colors duration-300;
-    /* Custom selection color to match the Cortex Gold brand */
-    @apply selection:bg-[#D4AF37] selection:text-[#0A192F];
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
   }
+}
 
-  /* Premium accessibility focus ring for keyboard navigation */
-  *:focus-visible {
-    @apply outline-none ring-2 ring-[#D4AF37] ring-offset-2 ring-offset-slate-50 dark:ring-offset-[#0A192F] rounded-sm transition-shadow duration-200;
-  }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
 }

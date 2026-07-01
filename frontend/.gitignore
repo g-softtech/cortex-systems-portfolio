@@ -3,45 +3,39 @@
 # dependencies
 /node_modules
 /.pnp
-.pnp.js
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
 # testing
 /coverage
-
-# production
-/build
 
 # next.js
 /.next/
 /out/
 
-# typescript
-/.tsbuildinfo
+# production
+/build
 
-# dotenv
-.env.local
-.env*.local
-
-# vercel
-.vercel/
-
-# macOS
+# misc
 .DS_Store
+*.pem
 
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# pnpm
-/pnpm-lock.yaml
+# env files (can opt-in for committing if needed)
+.env*
 
-# turbo
-.turbo/
+# vercel
+.vercel
 
-# Local development DB files (if any)
-*.sqlite
-*.sqlite-journal
-
-# Drizzle ORM generated files (if applicable)
-/drizzle
+# typescript
+*.tsbuildinfo
+next-env.d.ts
