@@ -130,6 +130,52 @@ export default async function Page() {
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+                  <span className="text-xs font-mono text-emerald-400">🟢 Live in Production</span>
+                </div>
+                <h4 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">CortexFit</h4>
+                <p className="text-slate-600 dark:text-slate-400 text-sm">Next.js 14 • Supabase • Stripe</p>
+              </div>
+              <div className="mt-8 flex gap-3">
+                <a href="https://fit.thecortexsystems.com/" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-[#D4AF37] hover:text-slate-900 dark:hover:text-white transition-colors border-b border-transparent hover:border-[#D4AF37]">Live Application ↗</a>
+              </div>
+            </div>
+            <div className="md:w-2/3 p-8">
+              <div className="w-full aspect-video bg-slate-100 dark:bg-[#050B14] border border-slate-200 dark:border-slate-800 rounded-lg mb-8 overflow-hidden relative group-hover:border-slate-300 dark:group-hover:border-slate-600 transition-colors flex items-center justify-center shadow-inner">
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-100 dark:from-[#0A192F] dark:to-[#050B14] flex items-center justify-center text-slate-400 font-mono text-sm">CortexFit Platform</div>
+              </div>
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-slate-800 dark:text-slate-200 font-semibold mb-1 flex items-center gap-2"><span className="text-[#D4AF37]">❯</span> The Problem & Value</h5>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">A multi-tenant SaaS platform built specifically for premium gym management. It streamlines member billing, scheduling, and facility access control into one highly performant dashboard for gym owners.</p>
+                </div>
+                <div>
+                  <h5 className="text-slate-800 dark:text-slate-200 font-semibold mb-1 flex items-center gap-2"><span className="text-[#D4AF37]">❯</span> Architecture Flow & Impact</h5>
+                  <div className="mt-4 mb-6 p-4 rounded-lg bg-slate-50 dark:bg-[#050B14] border border-slate-200 dark:border-slate-800/80 flex items-center justify-between text-xs font-mono overflow-hidden relative">
+                    <div className="absolute top-1/2 left-0 w-full h-px border-t border-dashed border-slate-300 dark:border-slate-700 -z-10 -translate-y-1/2"></div>
+                    <div className="flex flex-col items-center gap-2 bg-slate-50 dark:bg-[#050B14] px-2 z-10">
+                      <div className="w-8 h-8 rounded border border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.1)]">💻</div>
+                      <span className="text-slate-700 dark:text-slate-300">Next.js Client</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 bg-slate-50 dark:bg-[#050B14] px-2 z-10">
+                      <div className="w-8 h-8 rounded border border-blue-500/30 bg-blue-500/10 flex items-center justify-center text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.1)]">⚙️</div>
+                      <span className="text-slate-700 dark:text-slate-300">Server Actions</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 bg-slate-50 dark:bg-[#050B14] px-2 z-10">
+                      <div className="w-8 h-8 rounded border border-purple-500/30 bg-purple-500/10 flex items-center justify-center text-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.1)]">☁️</div>
+                      <span className="text-slate-700 dark:text-slate-300">Supabase Auth & DB</span>
+                    </div>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"><strong className="text-slate-900 dark:text-slate-300">Lessons Learned:</strong> Architected a complex multi-tenant B2B data model utilizing Row Level Security (RLS) in Supabase. Built resilient webhook processing pipelines to handle Stripe subscription events with 100% accuracy, ensuring smooth tenant onboarding and automated access provisioning.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article className="border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-[#0A192F]/50 rounded-xl overflow-hidden backdrop-blur-sm flex flex-col md:flex-row group">
+            <div className="md:w-1/3 bg-slate-50 dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 p-8 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
                   <span className="text-xs font-mono text-emerald-400">🟢 Maintained</span>
                 </div>
                 <h4 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Smart School Management System</h4>
