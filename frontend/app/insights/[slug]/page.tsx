@@ -1,35 +1,70 @@
-import { getArticleBySlug, articles } from "@/lib/articles";
-import Link from "next/link";
-import type { Metadata } from "next";
+import { notFound } from 'next/navigation'
+import Link from 'next/link'
+import type { Metadata } from 'next'
+import { PortableText } from '@portabletext/react'
+import { client } from '../../../sanity/lib/client'
+import { articleBySlugQuery, articleSlugsQuery } from '../../../sanity/lib/queries'
 
-// Statically generate all routes at build time for maximum performance
+// Statically generate routes at build time
 export async function generateStaticParams() {
-  return articles.map((article) => ({
-    slug: article.slug,
-  }));
+  try {
+    const slugs = await client.fetch<{ slug: string }[]>(articleSlugsQuery)
+    return slugs.map((article) => ({
+      slug: article.slug,
+    }))
+  } catch (error) {
+    console.error("Failed to generate static params from Sanity:", error)
+    return []
+  }
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const article = getArticleBySlug(params.slug);
-  if (!article) return { title: "Article Not Found" };
-  return { title: article.title, description: article.summary };
+  try {
+    const article = await client.fetch(articleBySlugQuery, { slug: params.slug })
+    if (!article) return { title: 'Article Not Found' }
+    return { title: article.title, description: article.summary }
+  } catch (error) {
+    console.error("Sanity fetch error in generateMetadata:", error)
+    // CMS outage fallback
+    return { title: 'Insights | Cortex Systems' }
+  }
 }
 
-export default function ArticlePage({ params }: { params: { slug: string } }) {
-  const article = getArticleBySlug(params.slug);
+export default async function ArticlePage({ params }: { params: { slug: string } }) {
+  let article;
+  try {
+    article = await client.fetch(articleBySlugQuery, { slug: params.slug })
+  } catch (error) {
+    console.error("Sanity fetch error in ArticlePage:", error)
+    // Throw to bubble up to error boundary (500) rather than 404ing on a network failure
+    throw new Error('Service Unavailable: Could not fetch article data')
+  }
 
+  // If the fetch succeeded but returned null, the article truly doesn't exist (or isn't published)
   if (!article) {
-    return (
-      <main className="grow flex flex-col items-center justify-center pt-32 pb-24 text-center px-6">
-        <div className="text-rose-400 font-mono text-xl mb-4">SYSTEM ERROR: Article not found!</div>
-        <div className="text-slate-300 font-mono">Searched for slug: <span className="text-[#D4AF37]">"{params.slug}"</span></div>
-        <div className="text-slate-500 font-mono mt-4 text-xs max-w-lg">Available slugs in database: {articles.map(a => a.slug).join(", ")}</div>
-      </main>
-    );
+    notFound()
+  }
+
+  // Safe JSON-LD Serialization
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.title,
+    description: article.summary,
+    datePublished: article.date,
+    author: {
+      '@type': 'Organization',
+      name: 'Cortex Systems',
+    },
+    url: `https://cortexsystems.io/insights/${article.slug}`,
   }
 
   return (
     <main className="grow flex flex-col items-center justify-start pt-32 pb-24 px-6 md:px-8 w-full max-w-3xl mx-auto">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Link href="/#insights" className="self-start mb-12 text-[#D4AF37] font-mono text-sm hover:text-white transition-colors">
         &larr; Return to Dashboard
       </Link>
@@ -45,12 +80,14 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <p className="text-xl text-slate-400 leading-relaxed">{article.summary}</p>
         </header>
 
-        <div className="text-slate-300 text-lg leading-relaxed space-y-6">
-          {article.content.split('\n\n').map((paragraph, idx) => (
-            <p key={idx}>{paragraph.trim()}</p>
-          ))}
+        <div className="text-slate-300 text-lg leading-relaxed space-y-6 prose prose-invert prose-slate max-w-none prose-p:leading-relaxed prose-a:text-[#D4AF37]">
+          {Array.isArray(article.content) ? (
+            <PortableText value={article.content} />
+          ) : (
+            <p>{typeof article.content === 'string' ? article.content : ''}</p>
+          )}
         </div>
       </article>
     </main>
-  );
+  )
 }

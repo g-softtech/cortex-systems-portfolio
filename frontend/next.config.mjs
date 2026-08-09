@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
+    ],
+  },
   async headers() {
     return [
       {
@@ -8,8 +16,8 @@ const nextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            // Allow Next.js scripts, Google Fonts, and your local/GitHub API connections
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; img-src 'self' blob: data:; font-src 'self' fonts.gstatic.com data:; connect-src 'self' api.github.com http://localhost:* http://127.0.0.1:*;",
+            // Allow Next.js scripts, Google Fonts, local/GitHub API, and Sanity endpoints
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; img-src 'self' blob: data: cdn.sanity.io; font-src 'self' fonts.gstatic.com data:; connect-src 'self' api.github.com http://localhost:* http://127.0.0.1:* *.api.sanity.io wss://*.api.sanity.io;",
           },
           {
             key: "X-Frame-Options",

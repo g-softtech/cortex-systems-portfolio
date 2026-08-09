@@ -3,9 +3,17 @@ import GithubActivity from "@/components/github-activity";
 import Image from "next/image";
 import ContactForm from "@/components/contact-form";
 import Link from "next/link";
-import { articles, type Article } from "@/lib/articles";
+import { client } from "../sanity/lib/client";
+import { articlesQuery } from "../sanity/lib/queries";
 
-export default function Page() {
+export default async function Page() {
+  let articles = [];
+  try {
+    articles = await client.fetch(articlesQuery);
+  } catch (error) {
+    console.error("Failed to fetch articles for homepage:", error);
+  }
+
   return (
     <main className="grow flex flex-col items-center justify-start pb-24 w-full">
       <div className="fixed inset-0 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 dark:opacity-20 -z-10 pointer-events-none" />
@@ -249,18 +257,24 @@ export default function Page() {
           <Link href="#" className="text-xs font-mono text-slate-400 hover:text-[#D4AF37] transition-colors border-b border-transparent hover:border-[#D4AF37] pb-0.5">View Archive ↗</Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {articles.map((article: Article) => (
-            <Link key={article.slug} href={`/insights/${article.slug}`} className="group cursor-pointer p-6 rounded-xl border border-transparent hover:border-slate-300 dark:hover:border-slate-800 hover:bg-slate-50/50 dark:hover:bg-[#0A192F]/30 transition-all focus-visible:ring-2 focus-visible:ring-[#D4AF37] outline-none">
-              <article>
-                <div className="text-xs font-mono text-slate-500 mb-3 flex items-center gap-3">
-                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">{article.category}</span>
-                  <span>{article.readTime}</span>
-                </div>
-                <h4 className="text-xl font-bold text-slate-900 dark:text-slate-200 group-hover:text-[#D4AF37] transition-colors mb-3">{article.title}</h4>
-                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{article.summary}</p>
-              </article>
-            </Link>
-          ))}
+          {articles.length === 0 ? (
+            <div className="col-span-full p-6 text-center border border-dashed border-slate-700 rounded-xl text-slate-400 font-mono text-sm">
+              Insights are currently unavailable. Please try again later.
+            </div>
+          ) : (
+            articles.map((article: any) => (
+              <Link key={article.slug} href={`/insights/${article.slug}`} className="group cursor-pointer p-6 rounded-xl border border-transparent hover:border-slate-300 dark:hover:border-slate-800 hover:bg-slate-50/50 dark:hover:bg-[#0A192F]/30 transition-all focus-visible:ring-2 focus-visible:ring-[#D4AF37] outline-none">
+                <article>
+                  <div className="text-xs font-mono text-slate-500 mb-3 flex items-center gap-3">
+                    <span className="px-2 py-1 bg-slate-100 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">{article.category}</span>
+                    <span>{article.readTime}</span>
+                  </div>
+                  <h4 className="text-xl font-bold text-slate-900 dark:text-slate-200 group-hover:text-[#D4AF37] transition-colors mb-3">{article.title}</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{article.summary}</p>
+                </article>
+              </Link>
+            ))
+          )}
         </div>
       </section>
 

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import CommandMenu from "../components/command-menu";
+import { client } from "../sanity/lib/client";
+import { articlesQuery } from "../sanity/lib/queries";
 import SystemStatus from "../components/system-status";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "./theme-provider";
@@ -28,18 +30,25 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  let cmsInsights: any[] = [];
+  try {
+    cmsInsights = await client.fetch(articlesQuery);
+  } catch (error) {
+    console.error("Failed to fetch insights for CommandMenu:", error);
+  }
+
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <body className="font-sans min-h-screen flex flex-col">
         <ThemeProvider>
           {children}
           <ThemeToggle />
-          <CommandMenu />
+          <CommandMenu cmsInsights={cmsInsights} />
           <div className="fixed bottom-6 right-6 z-50">
             <SystemStatus />
           </div>

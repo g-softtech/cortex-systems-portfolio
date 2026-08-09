@@ -5,13 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { getProjectAISummary } from "@/app/actions";
 // Database of searchable portfolio items and actions
-const COMMANDS = [
+const STATIC_COMMANDS = [
   { id: "p1", title: "Smart School Management System", category: "Projects", description: "React • Node.js • MongoDB", link: "#projects" },
   { id: "p2", title: "Secure Authentication Service", category: "Projects", description: "Node.js • Redis • JWT", link: "#projects" },
   { id: "p3", title: "ImpactConnect", category: "Projects", description: "React • Node.js • MongoDB", link: "#projects" },
-  { id: "b1", title: "Building Better Fullstack Applications", category: "Insights", description: "Read practical insights on fullstack architecture", link: "/insights/building-better-fullstack-applications" },
-  { id: "b2", title: "Choosing the Right Authentication Approach", category: "Insights", description: "Read practical insights on pragmatic auth", link: "/insights/choosing-the-right-authentication-approach" },
-  { id: "b3", title: "Improving React Performance in Real Projects", category: "Insights", description: "Read practical insights on frontend speed", link: "/insights/improving-react-performance-in-real-projects" },
   { id: "s1", title: "Engineering Operating System", category: "Navigation", description: "Read my constraint-driven design manifesto", link: "#" },
   { id: "t1", title: "Core Competencies", category: "Navigation", description: "View my tech stack and tools", link: "#tech" },
   { id: "a1", title: "View Résumé", category: "Actions", description: "Professional history and skills", link: "/resume.pdf" },
@@ -19,7 +16,7 @@ const COMMANDS = [
   { id: "c1", title: "Initialize Contact", category: "Navigation", description: "Send a secure message", link: "#contact" },
 ];
 
-export default function CommandMenu() {
+export default function CommandMenu({ cmsInsights = [] }: { cmsInsights?: any[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [aiSummary, setAiSummary] = useState<string | null>(null);
@@ -47,19 +44,28 @@ export default function CommandMenu() {
     }
   }, [isOpen]);
 
+  const dynamicInsights = cmsInsights.map(insight => ({
+    id: `cms-${insight.slug}`,
+    title: insight.title,
+    category: "Insights",
+    description: insight.summary,
+    link: `/insights/${insight.slug}`
+  }));
+
+  const allCommands = [...STATIC_COMMANDS, ...dynamicInsights];
+
   // Filter the commands based on user input
-  const filteredCommands = COMMANDS.filter((cmd) =>
+  const filteredCommands = allCommands.filter((cmd) =>
     (cmd.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    cmd.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (cmd.description && cmd.description.toLowerCase().includes(searchQuery.toLowerCase())) ||
     cmd.category.toLowerCase().includes(searchQuery.toLowerCase())) &&
     cmd.id !== "a1" && cmd.id !== "a2" // Hide actions unless directly searched for
   );
 
   // Prioritize exact matches for "actions" if search is specific
-  const actionCommands = COMMANDS.filter(cmd => (cmd.id === "a1" || cmd.id === "a2") && searchQuery.toLowerCase().includes(cmd.title.toLowerCase()));
+  const actionCommands = allCommands.filter(cmd => (cmd.id === "a1" || cmd.id === "a2") && searchQuery.toLowerCase().includes(cmd.title.toLowerCase()));
 
-
-  const handleSelect = (cmd: typeof COMMANDS[0]) => {
+  const handleSelect = (cmd: typeof allCommands[0]) => {
     if (cmd.id === "a2") {
       navigator.clipboard.writeText("hello@cortexsystems.io");
       setToast("SYSTEM: Email copied to clipboard.");
