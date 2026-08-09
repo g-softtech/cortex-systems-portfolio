@@ -56,7 +56,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
       '@type': 'Organization',
       name: 'Cortex Systems',
     },
-    url: `https://cortexsystems.io/insights/${article.slug}`,
+    url: `https://www.thecortexsystems.com/insights/${article.slug}`,
   }
 
   return (

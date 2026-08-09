@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cortexsystems.io"),
+  metadataBase: new URL("https://www.thecortexsystems.com"),
   title: {
     default: "Cortex Systems | Senior Fullstack Developer",
     template: "%s | Cortex Systems",

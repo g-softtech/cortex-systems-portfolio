@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/studio/',
     },
-    sitemap: 'https://cortexsystems.io/sitemap.xml',
+    sitemap: 'https://www.thecortexsystems.com/sitemap.xml',
   };
 }
