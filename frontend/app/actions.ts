@@ -98,8 +98,8 @@ export async function submitContactForm(formData: FormData) {
     }
 
     const { error } = await resend.emails.send({
-      from: 'Cortex Portfolio <onboarding@resend.dev>', // Resend testing email
-      to: 'tosinjaiyeoba@yahoo.com', // Your actual email address
+      from: 'Cortex Portfolio <contact@thecortexsystems.com>', // Official domain sender
+      to: 'portfolio@thecortexsystems.com', // Official destination inbox
       subject: `New Inquiry from ${name} - ${projectType}`,
       text: `Name: ${name}\nEmail: ${email}\nInquiry Type: ${projectType}\n\nMessage:\n${message}`,
       replyTo: email, // Lets you hit "reply" directly in your email client
