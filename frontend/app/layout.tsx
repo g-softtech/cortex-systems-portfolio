@@ -19,7 +19,17 @@ export const metadata: Metadata = {
     template: "%s | Cortex Systems",
   },
   description: "Intelligent Experiences. Secure Infrastructure.",
-  keywords: ["Senior Fullstack Developer", "Product Engineer", "Next.js", "React", "Node.js", "TypeScript", "Software Architecture"],
+  keywords: [
+    "Senior Fullstack Developer", 
+    "Product Engineer", 
+    "Next.js Enterprise Developer", 
+    "SaaS Architecture Consultant",
+    "Fractional CTO Nigeria",
+    "React", 
+    "Node.js", 
+    "TypeScript", 
+    "Software Architecture"
+  ],
   authors: [{ name: "Cortex Systems" }],
   openGraph: {
     type: "website",
@@ -27,6 +37,9 @@ export const metadata: Metadata = {
     title: "Cortex Systems | Senior Fullstack Developer",
     description: "Intelligent Experiences. Secure Infrastructure. Building high-velocity, constraint-driven digital products.",
     siteName: "Cortex Systems",
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
 };
 
