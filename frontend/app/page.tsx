@@ -6,6 +6,8 @@ import Link from "next/link";
 import { client } from "../sanity/lib/client";
 import { articlesQuery } from "../sanity/lib/queries";
 
+export const revalidate = 60; // Automatically refresh the page every 60 seconds if data changes
+
 export default async function Page() {
   let articles = [];
   try {
