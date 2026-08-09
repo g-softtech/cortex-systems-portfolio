@@ -2,8 +2,30 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { PortableText } from '@portabletext/react'
+import Image from 'next/image'
 import { client } from '../../../sanity/lib/client'
 import { articleBySlugQuery, articleSlugsQuery } from '../../../sanity/lib/queries'
+import { urlForImage } from '../../../sanity/lib/image'
+
+const ptComponents = {
+  types: {
+    image: ({ value }: any) => {
+      if (!value?.asset?._ref) {
+        return null
+      }
+      return (
+        <Image
+          alt={value.alt || 'Blog post image'}
+          loading="lazy"
+          src={urlForImage(value)?.url() as string}
+          width={800}
+          height={600}
+          className="rounded-lg my-8 object-cover w-full h-auto border border-slate-800"
+        />
+      )
+    }
+  }
+}
 
 // Statically generate routes at build time
 export async function generateStaticParams() {
@@ -80,9 +102,22 @@ export default async function ArticlePage({ params }: { params: { slug: string }
           <p className="text-xl text-slate-400 leading-relaxed">{article.summary}</p>
         </header>
 
+        {article.mainImage && (
+          <div className="w-full mb-12 relative overflow-hidden rounded-xl border border-slate-800 shadow-2xl">
+            <Image 
+              src={urlForImage(article.mainImage)?.url() as string}
+              alt={article.title}
+              width={1200}
+              height={630}
+              className="object-cover w-full max-h-[500px]"
+              priority
+            />
+          </div>
+        )}
+
         <div className="text-slate-300 text-lg leading-relaxed space-y-6 prose prose-invert prose-slate max-w-none prose-p:leading-relaxed prose-a:text-[#D4AF37]">
           {Array.isArray(article.content) ? (
-            <PortableText value={article.content} />
+            <PortableText value={article.content} components={ptComponents} />
           ) : (
             <p>{typeof article.content === 'string' ? article.content : ''}</p>
           )}

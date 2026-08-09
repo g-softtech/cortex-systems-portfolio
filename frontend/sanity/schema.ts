@@ -22,6 +22,14 @@ export const postType = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'category',
       title: 'Category',
       type: 'string',
@@ -48,6 +56,12 @@ export const postType = defineType({
         {
           type: 'block',
         },
+        {
+          type: 'image',
+          options: {
+            hotspot: true,
+          }
+        }
       ],
       validation: (Rule) => Rule.required(),
     }),
@@ -62,6 +76,7 @@ export const postType = defineType({
     select: {
       title: 'title',
       subtitle: 'category',
+      media: 'mainImage',
     },
   },
 })
