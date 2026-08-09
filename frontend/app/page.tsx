@@ -141,7 +141,7 @@ export default async function Page() {
             </div>
             <div className="md:w-2/3 p-8">
               <div className="w-full aspect-video bg-slate-100 dark:bg-[#050B14] border border-slate-200 dark:border-slate-800 rounded-lg mb-8 overflow-hidden relative group-hover:border-slate-300 dark:group-hover:border-slate-600 transition-colors flex items-center justify-center shadow-inner">
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-100 dark:from-[#0A192F] dark:to-[#050B14] flex items-center justify-center text-slate-400 font-mono text-sm">CortexFit Platform</div>
+                <Image src="/cortexfit-app.png" alt="CortexFit Platform interface" fill className="object-cover opacity-80 group-hover:opacity-100 transition-opacity" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
               </div>
               <div className="space-y-6">
                 <div>
